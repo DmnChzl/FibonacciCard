@@ -41,7 +41,7 @@ Enjoy! 👌
 ### Tips
 
 Try to reduce the **Fibonnaci** sequence using `urlSearchParam` :
-- `http://localhost:5000/?limit=89`
+- [fibonacci-card.vercel.app/?limit=89](https://fibonacci-card.vercel.app/?limit=89)
 
 ## License
 
