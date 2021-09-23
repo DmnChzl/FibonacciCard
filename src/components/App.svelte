@@ -8,7 +8,7 @@
 	let color = '#212121';
 	let reversed = true;
 	let pulsed = false;
-	let disabled = true;
+	let loading = true;
 	let fibonacci = 0;
 
 	const setThemeColorMeta = content => document.querySelector('meta[name="theme-color"]').setAttribute('content', content);
@@ -32,15 +32,13 @@
 
 		setTimeout(() => {
 			pulsed = true;
-			disabled = false;
+			loading = false;
 		}, 2 * 1000);
 	});
 
 	const askFibonacci = () => suite[Math.floor(Math.random() * suite.length)];
 
 	const handleClick = () => {
-		disabled = true;
-
 		if (reversed) {
 			reversed = false;
 
@@ -55,15 +53,11 @@
 				reversed = true;
 			}, 0.5 * 1000);
 		}
-
-		setTimeout(() => {
-			disabled = false;
-		}, 1.5 * 1000);
 	}
 </script>
 
 <div class="container" style={`background:${color};`}>
-	<button class="card no-user-select" class:reverse={reversed} class:pulse={pulsed} on:click={handleClick} disabled={disabled}>
+	<button class="card no-user-select" class:reverse={reversed} class:pulse={pulsed} on:click={handleClick} disabled={loading}>
 		<Recto color={color} />
 		<Verso color={color} value={fibonacci} />
 	</button>

@@ -1,6 +1,6 @@
 # Fibonacci Card 🃏
 
-> 1.0.0
+> 1.0.1
 
 I made a simple and colorful application (#ForTheLulz) based on the **Fibonnaci** sequence, for all your user stories (random) evaluation in a **Scrum** process.
 
