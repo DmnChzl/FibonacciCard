@@ -1,4 +1,24 @@
 /**
+ * Build Fibonacci Sequence
+ *
+ * @param {number} len Max Length
+ * @returns {number[]} Fibonacci Sequence
+ */
+export const buildFibonacci = len => {
+  let seq = [0, 1];
+
+  if (len <= 2) {
+    seq.length = len;
+  }
+
+  for (let i = 2; i < len; i++) {
+    seq = [...seq, seq[i - 2] + seq[i - 1]];
+  }
+
+  return seq;
+};
+
+/**
  * Convert Hex Color To Its Rgba Value (According To Its Opacity)
  *
  * @param {string} hex Hex Color

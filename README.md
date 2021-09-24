@@ -1,10 +1,10 @@
 # Fibonacci Card 🃏
 
-> 1.0.1
+> 1.1.0
 
 I made a simple and colorful application (#ForTheLulz) based on the **Fibonnaci** sequence, for all your user stories (random) evaluation in a **Scrum** process.
 
-This app is powered by [SvelteJS](https://svelte.dev/) (and [SASS](https://sass-lang.com/)).
+This app is powered by [SvelteJS](https://svelte.dev/).
 
 ## Preview
 
@@ -41,7 +41,7 @@ Enjoy! 👌
 ### Tips
 
 Try to reduce the **Fibonnaci** sequence using `urlSearchParam` :
-- [fibonacci-card.vercel.app/?limit=89](https://fibonacci-card.vercel.app/?limit=89)
+- [fibonacci-card.vercel.app/?limit=55](https://fibonacci-card.vercel.app/?limit=55)
 
 ## License
 

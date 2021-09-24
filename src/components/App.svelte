@@ -1,98 +1,107 @@
 <script>
-	import { onMount } from 'svelte';
-	import Recto from './Recto.svelte';
-	import Verso from './Verso.svelte';
-	import { COLORS } from '../constants';
+  import { onMount } from 'svelte';
+  import Recto from './Recto.svelte';
+  import Verso from './Verso.svelte';
+  import { buildFibonacci } from '../utils';
+  import { COLORS } from '../constants';
 
-	let suite = [0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377, 610, 987, 1597, 2584, 4181, 6765, 10946];
-	let color = '#212121';
-	let reversed = true;
-	let pulsed = false;
-	let loading = true;
-	let fibonacci = 0;
+  export let maxLength = 6;
 
-	const setThemeColorMeta = content => document.querySelector('meta[name="theme-color"]').setAttribute('content', content);
-	
-	onMount(() => {
-		const urlParams = new URLSearchParams(window.location.search);
+  let sequence = [];
+  let phi = 0;
+  let color = '#212121';
+  let reversed = true;
+  let pulsed = false;
+  let loading = true;
 
-		if (urlParams.has('limit')) {
-			const limit = urlParams.get('limit');
-			suite = suite.filter(n => n <= limit);
-			fibonacci = suite[suite.length - 1];
-		}
+  // prettier-ignore
+  const setThemeColorMeta = content => document.querySelector('meta[name="theme-color"]').setAttribute('content', content);
+  const getRandom = arr => arr[Math.floor(Math.random() * arr.length)];
 
-		color = COLORS[Math.floor(Math.random() * COLORS.length)];
+  onMount(() => {
+    const urlParams = new URLSearchParams(window.location.search);
+    sequence = buildFibonacci(maxLength);
 
-		setThemeColorMeta(color);
+    if (urlParams.has('limit')) {
+      const limit = urlParams.get('limit');
+      sequence = sequence.filter(n => n <= limit);
+    }
 
-		setTimeout(() => {
-			reversed = false;
-		}, 1000);
+    phi = sequence[sequence.length - 1];
+    color = getRandom(COLORS);
+    setThemeColorMeta(color);
 
-		setTimeout(() => {
-			pulsed = true;
-			loading = false;
-		}, 2 * 1000);
-	});
+    setTimeout(() => {
+      reversed = false;
+    }, 1000);
 
-	const askFibonacci = () => suite[Math.floor(Math.random() * suite.length)];
+    setTimeout(() => {
+      pulsed = true;
+      loading = false;
+    }, 2 * 1000);
+  });
 
-	const handleClick = () => {
-		if (reversed) {
-			reversed = false;
+  const handleClick = () => {
+    if (reversed) {
+      reversed = false;
 
-			setTimeout(() => {
-				pulsed = true;
-			}, 1000);
-		} else {
-			pulsed = false;
+      setTimeout(() => {
+        pulsed = true;
+      }, 1000);
+    } else {
+      pulsed = false;
 
-			setTimeout(() => {
-				fibonacci = askFibonacci();
-				reversed = true;
-			}, 0.5 * 1000);
-		}
-	}
+      setTimeout(() => {
+        phi = getRandom(sequence);
+        reversed = true;
+      }, 0.5 * 1000);
+    }
+  };
 </script>
 
 <div class="container" style={`background:${color};`}>
-	<button class="card no-user-select" class:reverse={reversed} class:pulse={pulsed} on:click={handleClick} disabled={loading}>
-		<Recto color={color} />
-		<Verso color={color} value={fibonacci} />
-	</button>
+  <button
+    class="card no-user-select"
+    class:reverse={reversed}
+    class:pulse={pulsed}
+    on:click={handleClick}
+    disabled={loading}
+  >
+    <Recto {color} />
+    <Verso {color} value={phi} />
+  </button>
 </div>
 
-<style lang="scss">
-.container {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	width: 100%;
-	height: 100%;
-	perspective: 800px;
+<style>
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    perspective: 800px;
+  }
 
-	.card {
-		position: relative;
-		width: 250px;
-		height: 350px;
-		border-radius: 0.5rem;
-		transform-style: preserve-3d;
-		transition: transform 0.75s ease-in-out;
-		box-shadow: 0 8px 12px rgba(0, 0, 0, 0.25);
-		cursor: pointer;
+  .card {
+    position: relative;
+    width: 250px;
+    height: 350px;
+    border-radius: 0.5rem;
+    transform-style: preserve-3d;
+    transition: transform 0.75s ease-in-out;
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.25);
+    cursor: pointer;
+  }
 
-		&:focus {
-			outline: none;
-		}
+  .card:focus {
+    outline: none;
+  }
 
-		&.reverse {
-			transform: rotateY(180deg);
-		}
+  .card.reverse {
+    transform: rotateY(180deg);
+  }
 
-		&.pulse {
-			animation: pulse 2s infinite;
-		}
-	}
-}
+  .card.pulse {
+    animation: pulse 2s infinite;
+  }
 </style>
