@@ -2,7 +2,7 @@
   import { onMount } from 'svelte';
   import Recto from './Recto.svelte';
   import Verso from './Verso.svelte';
-  import { buildFibonacci } from '../utils';
+  import { genFibonacci } from '../utils';
   import { COLORS } from '../constants';
 
   export let maxLength = 6;
@@ -17,18 +17,23 @@
   let mode = 'standard';
 
   // prettier-ignore
-  const setThemeColorMeta = content => document.querySelector('meta[name="theme-color"]').setAttribute('content', content);
+  const setThemeColorMeta = content => document.querySelector("meta[name='theme-color']").setAttribute('content', content);
   const getRandom = arr => arr[Math.floor(Math.random() * arr.length)];
 
   onMount(() => {
     const urlParams = new URLSearchParams(window.location.search);
-    sequence = buildFibonacci(maxLength);
+    sequence = genFibonacci(maxLength);
 
+    /**
+     * Check 'limit' urlSearchParam,
+     * and set Fibonacci sequence
+     */
     if (urlParams.has('limit')) {
       const limit = urlParams.get('limit');
       sequence = sequence.filter(n => n <= limit);
     }
 
+    // Check 'mode' urlSearchParam
     if (urlParams.has('mode')) {
       mode = urlParams.get('mode');
     }
@@ -37,10 +42,15 @@
     color = getRandom(COLORS);
     setThemeColorMeta(color);
 
+    // Reverse card after 1 second
     setTimeout(() => {
       reversed = false;
     }, 1000);
 
+    /**
+     * Then, activate pulse animation,
+     * and enable card after 2 seconds
+     */
     setTimeout(() => {
       pulsed = true;
       loading = false;
@@ -51,6 +61,10 @@
     if (reversed) {
       reversed = false;
 
+      /**
+       * Activate pulse animation,
+       * and reset opacity after 1 second
+       */
       setTimeout(() => {
         pulsed = true;
         opacity = 0;
@@ -58,11 +72,16 @@
     } else {
       pulsed = false;
 
+      /**
+       * Set value with random Fibonacci number,
+       * and reverse card after 0.5 second
+       */
       setTimeout(() => {
         phi = getRandom(sequence);
         reversed = true;
       }, 0.5 * 1000);
 
+      // Then, set opacity after 1.5 second
       setTimeout(() => {
         opacity = 1;
       }, 1.5 * 1000);
@@ -70,7 +89,7 @@
   };
 </script>
 
-<div class="container" style={`background:${color};`}>
+<div class="container" style={`background: ${color};`}>
   <button
     class="card no-user-select"
     class:reverse={reversed}

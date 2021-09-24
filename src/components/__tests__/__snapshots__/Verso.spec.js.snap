@@ -4,13 +4,13 @@ exports[`<Verso /> Testing Snapshot 1`] = `
 <body>
   <div>
     <div
-      class="verso svelte-12weqkl"
-      style="background:#fafafa;"
+      class="verso svelte-1apazwp"
+      style="background: #fafafa;"
     >
       <svg
         fill="none"
         height="146"
-        style="position:absolute;top:-1px;right:-1px;transform:scaleX(-1);"
+        style="position: absolute; top: -1px; right: -1px; transform: scaleX(-1);"
         viewBox="0 0 102 146"
         width="102"
         xmlns="http://www.w3.org/2000/svg"
@@ -22,16 +22,18 @@ exports[`<Verso /> Testing Snapshot 1`] = `
         />
       </svg>
        
+       
       <p
-        style="color:#212121;"
+        style="color: #212121;"
       >
         0
       </p>
        
+       
       <svg
         fill="none"
         height="146"
-        style="position:absolute;bottom:-1px;left:-1px;transform:scaleY(-1);"
+        style="position: absolute; bottom: -1px; left: -1px; transform: scaleY(-1);"
         viewBox="0 0 102 146"
         width="102"
         xmlns="http://www.w3.org/2000/svg"
