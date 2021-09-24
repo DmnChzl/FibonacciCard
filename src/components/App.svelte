@@ -13,6 +13,8 @@
   let reversed = true;
   let pulsed = false;
   let loading = true;
+  let opacity = 0;
+  let mode = 'standard';
 
   // prettier-ignore
   const setThemeColorMeta = content => document.querySelector('meta[name="theme-color"]').setAttribute('content', content);
@@ -25,6 +27,10 @@
     if (urlParams.has('limit')) {
       const limit = urlParams.get('limit');
       sequence = sequence.filter(n => n <= limit);
+    }
+
+    if (urlParams.has('mode')) {
+      mode = urlParams.get('mode');
     }
 
     phi = sequence[sequence.length - 1];
@@ -47,6 +53,7 @@
 
       setTimeout(() => {
         pulsed = true;
+        opacity = 0;
       }, 1000);
     } else {
       pulsed = false;
@@ -55,6 +62,10 @@
         phi = getRandom(sequence);
         reversed = true;
       }, 0.5 * 1000);
+
+      setTimeout(() => {
+        opacity = 1;
+      }, 1.5 * 1000);
     }
   };
 </script>
@@ -68,7 +79,7 @@
     disabled={loading}
   >
     <Recto {color} />
-    <Verso {color} value={phi} />
+    <Verso {color} value={phi} {opacity} {mode} />
   </button>
 </div>
 

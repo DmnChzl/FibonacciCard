@@ -1,0 +1,22 @@
+{
+  "en": {
+    "0": ["in fact...", "it's already done!"],
+    "1": ["easy!", "but without test(s)..."],
+    "5": ["5 or 8", "it's all the same"],
+    "13": ["who can do the most", "... do the least"],
+    "21": ["so, yes but...", "watch out the servers!"],
+    "34": ["it's possible", "or maybe not..."],
+    "55": ["so, I admit...", "I don't know!"],
+    "89": ["That is not possible", "sorry..."]
+  },
+  "fr": {
+    "0": ["à vrai dire...", "c'est déjà fait !"],
+    "1": ["simple !", "mais sans test(s)..."],
+    "5": ["5 ou 8", "du pareil au même"],
+    "13": ["qui peut le plus...", "peut le moins !"],
+    "21": ["alors, oui mais...", "attention aux envs !"],
+    "34": ["c'est possible", "ou peut être pas..."],
+    "55": ["bon, j'avoue...", "je ne sais pas !"],
+    "89": ["ça, ce n'est pas possible", "désolé..."]
+  }
+}

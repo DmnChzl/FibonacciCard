@@ -1,6 +1,6 @@
 # Fibonacci Card 🃏
 
-> 1.1.0
+> 1.1.1
 
 I made a simple and colorful application (#ForTheLulz) based on the **Fibonnaci** sequence, for all your user stories (random) evaluation in a **Scrum** process.
 
@@ -42,6 +42,9 @@ Enjoy! 👌
 
 Try to reduce the **Fibonnaci** sequence using `urlSearchParam` :
 - [fibonacci-card.vercel.app/?limit=55](https://fibonacci-card.vercel.app/?limit=55)
+- 
+Try the "_script_" mode using `urlSearchParam` :
+- [fibonacci-card.vercel.app/?mode=script](https://fibonacci-card.vercel.app/?mode=script)
 
 ## License
 
