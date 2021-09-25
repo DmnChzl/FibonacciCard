@@ -71,7 +71,7 @@
 
   .script {
     position: absolute;
-    margin: 1rem;
+    margin: auto 1rem;
     font-family: 'Bad Script', cursive;
     font-size: 1.5rem;
     transform: rotate(-22.5deg);
