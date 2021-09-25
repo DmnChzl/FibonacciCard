@@ -5,6 +5,12 @@ jest.mock('../../constants', () => ({
   COLORS: ['#212121']
 }));
 
+jest.mock('../../scripts.json', () => ({
+  en: {
+    0: ['in fact...', "it's already done!"]
+  }
+}));
+
 describe('<App />', () => {
   beforeEach(() => {
     jest.spyOn(document, 'querySelector').mockImplementation(() => ({
@@ -33,8 +39,15 @@ describe('<App />', () => {
   });
 
   it("Testing 'Limit' urlSearchParam", () => {
-    jest.spyOn(URLSearchParams.prototype, 'has').mockImplementationOnce(key => (key === 'limit' ? true : key));
-    jest.spyOn(URLSearchParams.prototype, 'get').mockImplementationOnce(key => (key === 'limit' ? 42 : key));
+    const location = {
+      ...window.location,
+      search: '?limit=42'
+    };
+
+    Object.defineProperty(window, 'location', {
+      writable: true,
+      value: location
+    });
 
     const { queryByText } = render(App, { maxLength: 12 });
 
@@ -59,9 +72,16 @@ describe('<App />', () => {
     });
   });
 
-  xit("Testing 'Mode' urlSearchParam + 'Click' Event", async () => {
-    jest.spyOn(URLSearchParams.prototype, 'has').mockImplementationOnce(key => (key === 'mode' ? true : key));
-    jest.spyOn(URLSearchParams.prototype, 'get').mockImplementationOnce(key => (key === 'mode' ? 'script' : key));
+  it("Testing 'Mode' urlSearchParam + 'Click' Event", async () => {
+    const location = {
+      ...window.location,
+      search: '?mode=script'
+    };
+
+    Object.defineProperty(window, 'location', {
+      writable: true,
+      value: location
+    });
 
     const { container, queryByText } = render(App, { maxLength: 1 });
 

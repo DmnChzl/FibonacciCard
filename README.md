@@ -42,7 +42,7 @@ Enjoy! 👌
 
 Try to reduce the **Fibonnaci** sequence using `urlSearchParam` :
 - [fibonacci-card.vercel.app/?limit=55](https://fibonacci-card.vercel.app/?limit=55)
-- 
+
 Try the "_script_" mode using `urlSearchParam` :
 - [fibonacci-card.vercel.app/?mode=script](https://fibonacci-card.vercel.app/?mode=script)
 

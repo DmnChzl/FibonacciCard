@@ -7,8 +7,8 @@
   "scripts": {
     "build": "rollup -c",
     "dev": "rollup -c -w",
-    "start": "sirv public --no-clear --host 0.0.0.0",
-    "test": "jest src",
+    "start": "sirv public --no-clear",
+    "test": "jest src --verbose",
     "test:coverage": "jest src --coverage"
   },
   "dependencies": {
