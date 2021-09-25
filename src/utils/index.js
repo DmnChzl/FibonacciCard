@@ -1,10 +1,10 @@
 /**
- * Build Fibonacci Sequence
+ * Generate Fibonacci Sequence
  *
  * @param {number} len Max Length
  * @returns {number[]} Fibonacci Sequence
  */
-export const buildFibonacci = len => {
+export const genFibonacci = len => {
   let seq = [0, 1];
 
   if (len <= 2) {
@@ -88,3 +88,28 @@ export const isLight = (hexColor, scale = 186) => {
  * @returns {boolean} Dark (Or Not)
  */
 export const isDark = (hexColor, scale = 186) => !isLight(hexColor, scale);
+
+/**
+ * Fisher–Yates Shuffle
+ *
+ * @param array Array
+ * @returns Shuffled Array
+ */
+export const knuthShuffle = array => {
+  let m = array.length,
+    t,
+    i;
+
+  // While there remain elements to shuffle...
+  while (m) {
+    // Pick a remaining element...
+    i = Math.floor(Math.random() * m--);
+
+    // And swap it with the current element
+    t = array[m];
+    array[m] = array[i];
+    array[i] = t;
+  }
+
+  return array;
+};

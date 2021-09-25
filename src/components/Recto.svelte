@@ -8,16 +8,17 @@
   let background = '#FAFAFA';
 
   beforeUpdate(() => {
+    // This is for readable color...
     if (isLight(color)) {
       background = '#212121';
     }
   });
 </script>
 
-<div class="recto" style={`background:${background};`}>
-  <Fibonacci {color} style="top:-1px;left:-1px;" />
-  <p style={`color:${color};`}>?</p>
-  <Fibonacci {color} style="bottom:-1px;right:-1px;transform:scaleX(-1)scaleY(-1);" />
+<div class="recto" style={`background: ${background};`}>
+  <Fibonacci {color} style="top: -1px; left: -1px;" />
+  <p style={`color: ${color};`}>?</p>
+  <Fibonacci {color} style="bottom: -1px; right: -1px; transform: scaleX(-1) scaleY(-1);" />
 </div>
 
 <style>

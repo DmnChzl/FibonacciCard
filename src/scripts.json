@@ -1,0 +1,26 @@
+{
+  "en": {
+    "0": ["in fact...", "it's already done!", "next!"],
+    "1": ["easy!", "without test..."],
+    "2": ["easy!", "with tests !"],
+    "5": ["5 or 8", "it's all the same", "done in the week"],
+    "8": ["5 or 8", "it's all the same", "done in the sprint"],
+    "13": ["who can do the most", "... do the least!", "who can do the least", "... do the most!"],
+    "21": ["so, yes but...", "watch out the servers!", "where are the docs?"],
+    "34": ["it's possible", "maybe...", "maybe not..."],
+    "55": ["I admit that... this...", "I don't know!"],
+    "89": ["This is not possible", "wait for it...", "sorry..."]
+  },
+  "fr": {
+    "0": ["c'est à dire que...", "c'est déjà fait !", "suivant !"],
+    "1": ["simple !", "sans test...", "tranquill"],
+    "2": ["simple !", "avec des tests !"],
+    "5": ["5 ou 8", "du pareil au même", "fait dans la semaine"],
+    "8": ["5 ou 8", "du pareil au même", "fait dans le sprint"],
+    "13": ["qui peut le plus...", "peut le moins !", "qui peut le moins...", "peut le plus !"],
+    "21": ["alors, oui mais...", "attention aux envs !", "où sont les specs ?"],
+    "34": ["c'est possible", "peut être...", "peut être pas..."],
+    "55": ["j'avoue que là...", "je ne sais pas !"],
+    "89": ["Ce n'est pas possible", "patience, patience...", "désolé..."]
+  }
+}
