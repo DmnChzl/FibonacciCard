@@ -20,16 +20,21 @@
 
     if (mode === 'script') {
       try {
+        // Get all scripts by locale and value...
+        let scriptsByLocale = allScripts[locale][`${value}`];
+
         /**
-         * Get all scripts by locale and value, mix them up,
-         * and set scripts with only two of them
+         * If all scripts are multiple (more than two),
+         * mix them up, and set scripts with all of them
          */
-        const scriptsByLocale = allScripts[locale][`${value}`];
-        scripts = knuthShuffle(scriptsByLocale);
-        scripts.length = 2;
-      } catch (err) {
-        // eslint-disable-next-line
-        console.log(err);
+        if (scriptsByLocale[0] instanceof Array) {
+          scriptsByLocale = knuthShuffle(scriptsByLocale);
+          scripts = scriptsByLocale[0];
+        } else {
+          scripts = scriptsByLocale;
+        }
+      } catch {
+        scripts = [];
       }
     }
   });
@@ -38,13 +43,13 @@
 <div class="verso" style={`background: ${background};`}>
   <Fibonacci {color} style="top: -1px; right: -1px; transform: scaleX(-1);" />
 
-  {#if scripts && scripts.length > 0}
+  {#if scripts.length > 0}
     <span class="script" style={`color: ${color}; opacity: ${opacity};`}>{scripts[0]}</span>
   {/if}
 
   <p style={`color: ${color};`}>{value}</p>
 
-  {#if scripts && scripts.length > 1}
+  {#if scripts.length > 1}
     <span class="script" style={`color: ${color}; opacity: ${opacity};`}>{scripts[1]}</span>
   {/if}
 
