@@ -95,8 +95,7 @@
     class:reverse={reversed}
     class:pulse={pulsed}
     on:click={handleClick}
-    disabled={loading}
-  >
+    disabled={loading}>
     <Recto {color} />
     <Verso {color} value={phi} {opacity} {mode} />
   </button>

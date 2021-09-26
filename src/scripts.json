@@ -2,7 +2,7 @@
   "en": {
     "0": ["in fact...", "it's already done!"],
     "1": ["easy!", "but without test..."],
-    "2": ["easy!", "and with tests!"],
+    "2": ["easy!", "tests included!"],
     "3": ["because...", "why not?"],
     "5": [
       ["5 or 8", "it's all the same"],
@@ -12,19 +12,23 @@
       ["5 or 8", "it's all the same"],
       ["it will be done...", "during the sprint!"]
     ],
-    "13": [["who can do the most", "... do the least!"], ["who can do the least"]],
+    "13": [["who can do the most...", "do the least!"], ["that's a backend task!"], ["that's a frontend task!"]],
     "21": [
       ["so, yes but...", "watch out the servers!"],
       ["no! because...", "where are the docs?"]
     ],
     "34": ["maybe...", "maybe not..."],
-    "55": ["I admit that there...", "I don't know!"],
-    "89": ["nooope!"]
+    "55": [
+      ["I admit that there...", "I don't know!"],
+      ["quality...", "has a price!"]
+    ],
+    "89": ["nooope!!!"],
+    "144": ["¯\\_(ツ)_/¯"]
   },
   "fr": {
     "0": ["c'est à dire que...", "c'est déjà fait !"],
     "1": ["simple !", "mais sans test..."],
-    "2": ["simple !", "et avec des tests !"],
+    "2": ["simple !", "tests inclus !"],
     "3": ["parce que...", "pourquoi pas ?"],
     "5": [
       ["5 ou 8", "du pareil au même"],
@@ -34,13 +38,17 @@
       ["5 ou 8", "du pareil au même"],
       ["ce sera fait...", "pendant le sprint !"]
     ],
-    "13": [["qui peut le plus...", "peut le moins !"], ["qui peut le moins..."]],
+    "13": [["qui peut le plus...", "peut le moins !"], ["c'est du back ça !"], ["c'est du front ça !"]],
     "21": [
       ["alors, oui mais...", "attention aux envs !"],
       ["non ! parce que...", "où sont les specs ?"]
     ],
     "34": ["peut être...", "peut être pas..."],
-    "55": ["j'avoue que là...", "je ne sais pas !"],
-    "89": ["naaan !!!"]
+    "55": [
+      ["j'avoue que là...", "je ne sais pas !"],
+      ["la qualité...", "a un coût !"]
+    ],
+    "89": ["naaan !!!"],
+    "144": ["¯\\_(ツ)_/¯"]
   }
 }
