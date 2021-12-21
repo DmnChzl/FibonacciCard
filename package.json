@@ -3,7 +3,7 @@
   "version": "1.1.1",
   "description": "Fibonacci Card 🃏",
   "author": "Damien Chazoule <damien.chazoule@gmail.com>",
-  "repository": "https://github.com/mrdoomy/fibonaccicard.git",
+  "repository": "https://github.com/dmnchzl/fibonaccicard.git",
   "scripts": {
     "build": "rollup -c",
     "dev": "rollup -c -w",

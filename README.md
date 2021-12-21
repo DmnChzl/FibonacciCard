@@ -15,7 +15,7 @@ This app is powered by [SvelteJS](https://svelte.dev/).
 Repository:
 
 ```
-git clone https://github.com/MrDoomy/FibonacciCard.git
+git clone https://github.com/DmnChzl/FibonacciCard.git
 ```
 
 Install:
